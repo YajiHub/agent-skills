@@ -219,13 +219,3 @@ npx skills add YajiHub/agent-skills/superpower \
 ```
 
 ---
-
-## Recommended Multi-Model & Subagent Routing (Pi Harness)
-
-| Role | Agent / File | Recommended Model | Responsibility |
-| :--- | :--- | :--- | :--- |
-| **Orchestrator (Daily)** | Main Pi Session | **Claude Sonnet 4.6** | Runs `executing-plans`, `codebase-xray`, `pair-navigator`, `rubber-duck-grill`, and `save-progress`. |
-| **Orchestrator (Heavy Architecture)** | Main Pi Session | **Claude Opus 4.6** | Used selectively for complex `wayfinder` domain modeling or initial `system-archaeologist` runs. |
-| **Implementation Subagent** | `expressive-dev.md` | `deepseek/deepseek-v4.1-flash` | Reads `AGENTS.md`, writes RED-first tests, implements scoped features, and returns a 4-part ownership summary. |
-| **Audit & Hygiene Subagent** | `hygiene-reviewer.md` | `z-ai/glm-5.3-flash` | Read-only auditor checking `git diff` against specs, blocking `.superpowers/` clutter, and checking ICM doc drift. |
-| **QA / Live Probing Subagent** | `qa-tester.md` | `opencode/luna-gpt-6` | Bulk workflow tester probing live endpoints, role matrices, and database state with hard command-output proof. |
