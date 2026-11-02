@@ -11,9 +11,30 @@ disable-model-invocation: true
 
 Wayfinder separates **finding the way** from **building the thing**. You do not write production implementation code, run migrations, or mutate external state during Wayfinder. You inspect the codebase, surface hidden trade-offs, resolve decisions one at a time, and leave behind a clear route.
 
+## 0. Status Check ("What's next?")
+
+Run this INSTEAD of planning when the user asks where things stand ("what's next?", "where are we?", "continue") or invokes Wayfinder with no idea attached:
+
+1. Read `AGENTS.md`, the active plan or `MAP.md` (its Phase Progress table), and the newest note in `docs/sessions/`. Run `git status`, `git branch --show-current`, and `git log --oneline -10`.
+2. Detect drift and mention it (do not fix it):
+   - Commits newer than the latest session note (a teammate pushed, or a session ended without `/skill:wrap-up`).
+   - Uncommitted changes left from a previous session.
+   - Plan checkboxes that disagree with what the code or git log shows.
+3. Reply in at most 8 lines:
+   - **Where we are:** effort + phase + status
+   - **Last done:** from the session note / git log
+   - **Loose ends:** drift, uncommitted work, failing checks mentioned in the last note
+   - **Next action:** one concrete step
+   - **Run:** the exact command, e.g. `/skill:execute-phase Phase 3`, `/skill:wayfinder continue planning/<slug>/MAP.md`, or `/skill:wrap-up`
+4. Stop and wait. Do not start planning or coding until the user picks.
+
+If there is no `AGENTS.md` and no plan: say so, and recommend `/skill:system-archaeologist` (existing code) or `/skill:grill-me` (new idea).
+
+---
+
 ## 1. First Act: Read the Index First (Token-Saving Discovery)
 
-When invoked with an idea, bug, or feature:
+When invoked with an idea, bug, or feature (not a status question):
 
 1. **Check the Routing & Atlas Layer BEFORE Grepping:**
    - Read `AGENTS.md`, `docs/SYSTEM_ATLAS.md`, and the most recent note in `docs/sessions/` if they exist.
@@ -77,8 +98,7 @@ Include these sections in `MAP.md`:
   2. Pick the next unblocked item on the **Active Frontier** (or the one the user names).
   3. Resolve it using its mode (`grill`, `domain-model`, `research`, or `prototype`).
   4. Write the full reasoning/schema/findings into `decisions/NN-<slug>.md`, move its link to **Decisions So Far** with a 1-line gist, and graduate any newly-sharpened items from **Fog of War** into **Active Frontier**.
-  5. When **Active Frontier**, **Blocked**, and **Fog of War** are all empty, generate the final implementation roadmap in `MAP.md` and hand off for execution. 
-  Use the same ownership tags
+  5. When **Active Frontier**, **Blocked**, and **Fog of War** are all empty, generate the final implementation roadmap in `MAP.md` and hand off for execution. Use the same ownership tags (🧑 / 🤝 / 🤖) on every roadmap task.
 
 ### Phase Table & Anti-Stale Rules
 - Always include a `## Phase Progress` table at the top of `MAP.md` with columns: `| Phase | Scope | Blocking Decisions | Status |` using `[ ] Pending`, `🟡 In Progress`, or `✅ Done`.

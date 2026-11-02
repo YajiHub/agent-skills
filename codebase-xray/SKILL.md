@@ -14,7 +14,7 @@ Your goal is to turn a "black box" module in the user's repository into a clear 
 
 1. **Trace the Exact Execution Path:**
    Read the actual source files involved in the requested feature or module. Map the end-to-end lifecycle step-by-step using real file paths, class names, and function names:
-   Adapt the layers to the project's stack; the list below is an example for a Flutter + Django app.s
+   Adapt the layers to the project's stack; the list below is an example for a Flutter + Django app.
    - **Trigger / UI Layer:** Which screen/widget initiates the action and what state it holds.
    - **State / Network Layer:** How the ViewModel/Controller formats the payload and calls the API client.
    - **Routing & View Layer:** Which backend URL route and View/Controller receives the request, and what permissions/serializers run first.
