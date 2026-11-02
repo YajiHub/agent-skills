@@ -7,6 +7,8 @@ Built around three core principles:
 2. **Anti-Vibe-Coding & Code Ownership:** Never commit code you cannot explain, debug, or defend. Every plan tags each task with who writes it (🧑 me / 🤝 together / 🤖 agent), and the share of 🧑 tasks should grow over time. Pair execution with end-to-end tracing (`codebase-xray`), hands-on coaching (`pair-navigator`), and diff defense quizzes (`wrap-up`, `rubber-duck-grill`).
 3. **Zero-Dependency Skills:** Every custom skill here works on its own. No skill calls another skill that might not be installed. Plans scale from 1-session features (Compact Mode) to multi-session epics (Map Mode / Fog of War) via `wayfinder`.
 
+See [PLAYBOOK.md](PLAYBOOK.md) for what to run in each situation. Subagent definitions live in [`agents/`](agents/).
+
 ---
 
 ## Repository Structure
