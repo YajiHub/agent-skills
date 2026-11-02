@@ -47,9 +47,9 @@ Every open question is resolved using one of four built-in modes:
 1. Resolve the 1–3 high-impact questions one at a time using **Grill**, **Domain-Model**, or **Research**.
 2. Once core choices are settled, write `planning/<slug>-plan.md` containing:
    - **Destination & Scope:** Included outcomes and explicit exclusions (`Out of scope`).
-   - **Locked Decisions:** The choices made and why.
+   - **Locked Decisions:** The choice, why, and who made it: `(by: me)` or `(by: delegated)`.
    - **Domain & File Impact:** Exact models, endpoints, services, and UI files to create or modify.
-   - **Phased Execution Checklist:** Outcome-driven phases with concrete tasks and verification checks ready for a coding session.
+   - **Phased Execution Checklist:** Outcome-driven phases with concrete tasks and verification checks. Tag every task with who writes it: 🧑 me, 🤝 together, 🤖 agent. Default most tasks to 🤖, but tag 1–2 small, core-logic tasks per phase as 🧑 or 🤝 unless I say otherwise.
 3. Update `AGENTS.md` (if present) so its `Active Plan` pointer links to `planning/<slug>-plan.md`.
 4. Stop and hand off the file path. Do not start Phase 1 unless explicitly instructed.
 
@@ -77,7 +77,8 @@ Include these sections in `MAP.md`:
   2. Pick the next unblocked item on the **Active Frontier** (or the one the user names).
   3. Resolve it using its mode (`grill`, `domain-model`, `research`, or `prototype`).
   4. Write the full reasoning/schema/findings into `decisions/NN-<slug>.md`, move its link to **Decisions So Far** with a 1-line gist, and graduate any newly-sharpened items from **Fog of War** into **Active Frontier**.
-  5. When **Active Frontier**, **Blocked**, and **Fog of War** are all empty, generate the final implementation roadmap in `MAP.md` and hand off for execution.
+  5. When **Active Frontier**, **Blocked**, and **Fog of War** are all empty, generate the final implementation roadmap in `MAP.md` and hand off for execution. 
+  Use the same ownership tags
 
 ### Phase Table & Anti-Stale Rules
 - Always include a `## Phase Progress` table at the top of `MAP.md` with columns: `| Phase | Scope | Blocking Decisions | Status |` using `[ ] Pending`, `🟡 In Progress`, or `✅ Done`.
